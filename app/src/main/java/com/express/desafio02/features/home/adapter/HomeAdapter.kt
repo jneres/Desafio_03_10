@@ -47,14 +47,14 @@ class HomeAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 txtData.text = service.date.toString()
                 txtPrice.text = service.price.toString()
 
-                val requetOptions = RequestOptions()
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
-
-                Glide.with(imgItemList.context)
-                    .applyDefaultRequestOptions(requetOptions)
-                    .load(service.image)
-                    .into(imgItemList)
+//                val requetOptions = RequestOptions()
+//                    .placeholder(R.drawable.ic_launcher_background)
+//                    .error(R.drawable.ic_launcher_background)
+//
+//                Glide.with(imgItemList.context)
+//                    .applyDefaultRequestOptions(requetOptions)
+//                    .load(service.image)
+//                    .into(imgItemList)
 
             }
         }

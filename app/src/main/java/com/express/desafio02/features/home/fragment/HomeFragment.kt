@@ -18,23 +18,30 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun init() {
         setObservers()
         initRecyclerview()
+        setEvents()
+    }
+
+    private fun setEvents(){
+        viewModel.getItens()
     }
 
     private fun setObservers() {
         viewModel.loading.observe(viewLifecycleOwner) {
             showLoading(it)
         }
+
         binding.apply {
             viewModel.homeData.observe(viewLifecycleOwner) { response ->
-                if (response != null) homeAdapter?.setDataSet(response)
-
+                if (response != null) {
+                    homeAdapter?.setDataSet(response)
+                }
             }
         }
-        viewModel.getItens()
     }
 
     fun initRecyclerview() {
         binding?.apply {
+            homeAdapter = HomeAdapter()
             homeRecycler.layoutManager = LinearLayoutManager(requireContext())
             homeRecycler.adapter = homeAdapter
         }

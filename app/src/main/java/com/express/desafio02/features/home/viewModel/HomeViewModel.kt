@@ -22,7 +22,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
 
             when (response) {
                 is ResponseWrapper.Success -> {
-                    homeData.value = response.value.payload
+                    homeData.value = response.value
                 }
                 else -> {}
             }

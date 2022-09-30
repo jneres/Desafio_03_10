@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface HomeService {
     @GET("events/")
-    suspend fun getList(): BaseResponse<List<HomeResponse>>
+    suspend fun getList(): List<HomeResponse>
 
 }
