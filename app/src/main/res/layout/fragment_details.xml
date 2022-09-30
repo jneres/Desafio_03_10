@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/img_item_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/ic_launcher_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/purple_700" />
+
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:fontFamily="@font/inter_bold"
+                android:text="Feira de adoção de animais na Redenção"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/img_item_list" />
+
+            <LinearLayout
+                android:id="@+id/container_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_toStartOf="@+id/img_item_list"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_title">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/data"
+                    android:textColor="@color/grey_7F879F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_value_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="1534784400000"
+                    android:textColor="@color/grey_666D80"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/img_item_list"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/container_data"
+                app:layout_constraintTop_toTopOf="@id/container_data">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/preco"
+                    android:textColor="@color/grey_7F879F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_value_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="R$: 59,90"
+                    android:textColor="@color/grey_666D80"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/container_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_toStartOf="@+id/img_item_list"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@id/container_data"
+                app:layout_constraintTop_toBottomOf="@id/container_data">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/longitude"
+                    android:textColor="@color/grey_7F879F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_value_longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="-51.2146267"
+                    android:textColor="@color/grey_666D80"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_toStartOf="@+id/img_item_list"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@id/container_price"
+                app:layout_constraintTop_toBottomOf="@id/container_price">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/latitude"
+                    android:textColor="@color/grey_7F879F"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_value_latitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="-30.0392981"
+                    android:textColor="@color/grey_666D80"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/description1"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/container_longitude" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
