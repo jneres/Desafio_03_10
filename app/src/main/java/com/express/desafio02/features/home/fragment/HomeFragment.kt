@@ -1,19 +1,21 @@
 package com.express.desafio02.features.home.fragment
 
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.express.desafio02.R
 import com.express.desafio02.databinding.FragmentHomeBinding
 import com.express.desafio02.features.home.viewModel.HomeViewModel
 import com.express.desafio02.core.abstractions.fragment.BaseFragment
-import com.express.testedesenvolvedorsicredi.features.home.adapter.HomeAdapter
+import com.express.desafio02.features.home.adapter.HomeAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-    private var homeAdapter: HomeAdapter? = null
     private val viewModel: HomeViewModel by sharedViewModel()
+    private var homeAdapter: HomeAdapter? = null
 
     override fun layout() = R.layout.fragment_home
+
 
     override fun init() {
         setObservers()
@@ -21,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         setEvents()
     }
 
-    private fun setEvents(){
+    private fun setEvents() {
         viewModel.getItens()
     }
 
@@ -36,14 +38,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     homeAdapter?.setDataSet(response)
                 }
             }
+
+            viewModel.homeDataItem.observe(viewLifecycleOwner) {
+                if (it != null) {
+                    navigate(R.id.DetailsFragment)
+                }
+            }
         }
     }
 
-    fun initRecyclerview() {
+    private fun initRecyclerview() {
         binding?.apply {
-            homeAdapter = HomeAdapter()
+            homeAdapter = HomeAdapter() {
+                getItensDetails(it)
+            }
+
             homeRecycler.layoutManager = LinearLayoutManager(requireContext())
             homeRecycler.adapter = homeAdapter
         }
     }
+
+    private fun getItensDetails(idItem: Int) {
+        viewModel.getItensDetails(idItem)
+    }
 }
+
+

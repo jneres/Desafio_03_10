@@ -14,11 +14,11 @@
 
         <action
             android:id="@+id/action_HomeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            app:destination="@id/DetailsFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/detailsFragment"
+        android:id="@+id/DetailsFragment"
         android:name="com.express.desafio02.features.home.fragment.DetailsFragment"
         tools:layout="@layout/fragment_details" />
 

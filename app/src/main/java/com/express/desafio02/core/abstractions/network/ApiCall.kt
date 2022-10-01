@@ -1,6 +1,5 @@
 package com.express.desafio02.core.abstractions.network
 
-import com.express.testedesenvolvedorsicredi.core.abstractions.network.ResponseWrapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

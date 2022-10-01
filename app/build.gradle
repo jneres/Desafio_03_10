@@ -18,7 +18,7 @@ android {
     }
 
     buildTypes {
-        debug{
+        debug {
             buildConfigField "String", "BASE_URL", "\"https://5f5a8f24d44d640016169133.mockapi.io/api/\""
         }
         release {
@@ -70,10 +70,6 @@ dependencies {
     //Recyclerview
     implementation "androidx.recyclerview:recyclerview:1.2.1"
 
-//    //glide
-    def glide_version = "4.12.0"
-//    implementation "com.github.bumptech.glide:glide:$glide_version"
-//    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     // Life Cycle
     def lifecycleVersion = "2.5.1"
@@ -85,5 +81,4 @@ dependencies {
 
     //picasso
     implementation "com.squareup.picasso:picasso:2.8"
-
 }

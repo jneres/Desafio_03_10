@@ -1,4 +1,4 @@
-package com.express.testedesenvolvedorsicredi.core.abstractions.network
+package com.express.desafio02.core.abstractions.network
 
 sealed class ResponseWrapper<out T> {
     data class Success<out T>(val value: T): ResponseWrapper<T>()

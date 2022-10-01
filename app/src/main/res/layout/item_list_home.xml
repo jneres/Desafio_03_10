@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/itemList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -12,12 +13,11 @@
             android:id="@+id/img_item_list"
             android:layout_width="0dp"
             android:layout_height="80dp"
+            android:scaleType="centerCrop"
             android:layout_marginEnd="16dp"
             android:layout_weight="2"
-            android:background="@drawable/ic_launcher_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/purple_700" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <LinearLayout
             android:id="@+id/container_info"
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_medium"
-                android:text="Data: 1534784400000"
+                android:text=""
                 android:textSize="14sp" />
 
             <TextView
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_medium"
-                android:text="Preço: 29.99"
+                android:text=""
                 android:textSize="14sp" />
 
             <View
