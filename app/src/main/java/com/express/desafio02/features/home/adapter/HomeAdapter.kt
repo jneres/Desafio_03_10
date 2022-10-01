@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.express.desafio02.R
 import com.express.desafio02.databinding.ItemListHomeBinding
 import com.express.desafio02.features.home.data.model.HomeResponse
@@ -44,19 +42,16 @@ class HomeAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val binding: ItemListHomeBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(service: HomeResponse) {
             binding.apply {
                 txtTitle.text = service.title
-                txtData.text = service.date.toString()
-                txtPrice.text = service.price.toString()
+                txtData.text = "Data: ${service.date.toString()}"
+                txtPrice.text = "Preço: ${service.price.toString()}"
 
-                val url = service.image
-                Glide.with(itemView.context)
-                    .load(url)
-                    .fitCenter()
-                    .into(binding.imgItemList)
 
             }
         }
+
     }
 }
