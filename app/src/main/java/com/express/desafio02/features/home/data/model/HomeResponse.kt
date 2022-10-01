@@ -19,15 +19,17 @@ data class HomeResponse(
 
     @SerializedName("longitude")
     var longitude: Double? = 0.0,
+
     @SerializedName("latitude")
     var latitude: Double? = 0.0,
 
     @SerializedName("price")
     var price: Double? = 0.0,
+
     @SerializedName("title")
     var title: String? = "",
 
     @SerializedName("id")
-    var id: Int
+    var idItem: Int
 
 ) : Serializable

@@ -1,12 +1,11 @@
 package com.express.desafio02.features.home.fragment
 
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.express.desafio02.R
-import com.express.desafio02.databinding.FragmentHomeBinding
-import com.express.desafio02.features.home.viewModel.HomeViewModel
 import com.express.desafio02.core.abstractions.fragment.BaseFragment
+import com.express.desafio02.databinding.FragmentHomeBinding
 import com.express.desafio02.features.home.adapter.HomeAdapter
+import com.express.desafio02.features.home.viewModel.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -15,7 +14,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private var homeAdapter: HomeAdapter? = null
 
     override fun layout() = R.layout.fragment_home
-
 
     override fun init() {
         setObservers()
@@ -40,9 +38,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
 
             viewModel.homeDataItem.observe(viewLifecycleOwner) {
-                if (it != null) {
-                    navigate(R.id.DetailsFragment)
-                }
+                navigate(R.id.DetailsFragment)
             }
         }
     }

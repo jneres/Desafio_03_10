@@ -20,7 +20,13 @@
     <fragment
         android:id="@+id/DetailsFragment"
         android:name="com.express.desafio02.features.home.fragment.DetailsFragment"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
 
+        <argument
+            android:name="homeResponseDetails"
+            app:argType="com.express.desafio02.features.home.data.model.HomeResponse"
+            app:nullable="true" />
+
+    </fragment>
 
 </navigation>

@@ -6,6 +6,8 @@
 "image": "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png</string>
     <string name="data">Data: %1$s</string>
     <string name="preco">Preço: %1$s</string>
+    <string name="data_details">Data:</string>
+    <string name="preco_details">Preço:</string>
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
     <string name="feira_de_ado_o_de_animais_na_reden_o">Feira de adoção de animais na Redenção</string>

@@ -9,7 +9,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="15dp">
 
             <ImageView
@@ -17,6 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:background="@drawable/ic_launcher_background"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -28,10 +29,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:textAllCaps="true"
-                android:textAlignment="center"
                 android:fontFamily="@font/inter_bold"
-                android:text="Feira de adoção de animais na Redenção"
+                android:text=""
+                android:textAlignment="center"
+                android:textAllCaps="true"
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/img_item_list" />
 
@@ -49,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_bold"
-                    android:text="@string/data"
+                    android:text="@string/data_details"
                     android:textColor="@color/grey_7F879F"
                     android:textSize="14sp" />
 
@@ -58,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_medium"
-                    android:text="1534784400000"
+                    android:text=""
                     android:textColor="@color/grey_666D80"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -77,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_bold"
-                    android:text="@string/preco"
+                    android:text="@string/preco_details"
                     android:textColor="@color/grey_7F879F"
                     android:textSize="14sp" />
 
@@ -86,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_medium"
-                    android:text="R$: 59,90"
+                    android:text=""
                     android:textColor="@color/grey_666D80"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -115,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_medium"
-                    android:text="-51.2146267"
+                    android:text=""
                     android:textColor="@color/grey_666D80"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -143,11 +144,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_medium"
-                    android:text="-30.0392981"
+                    android:text=""
                     android:textColor="@color/grey_666D80"
                     android:textSize="16sp" />
             </LinearLayout>
-
 
             <TextView
                 android:id="@+id/txt_description"
@@ -155,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:fontFamily="@font/inter_medium"
-                android:text="@string/description1"
+                android:text=""
                 android:textSize="14sp"
                 app:layout_constraintTop_toBottomOf="@id/container_longitude" />
 

@@ -14,6 +14,7 @@ class HomeAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items: List<HomeResponse> = ArrayList()
+    var idSelected = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return HomeViewHolder(
@@ -28,8 +29,8 @@ class HomeAdapter(
                 holder.bind(items[position])
                 holder.binding.apply {
                     itemList.setOnClickListener {
-                        val idItem = currentItem.id
-                        callback.invoke(idItem)
+                        idSelected = currentItem.idItem
+                        callback.invoke(currentItem.idItem)
                     }
                 }
             }

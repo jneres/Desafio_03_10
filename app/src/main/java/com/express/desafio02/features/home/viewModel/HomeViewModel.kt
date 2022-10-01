@@ -13,6 +13,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
     val homeData = MutableLiveData<List<HomeResponse>?>()
     val homeDataItem = MutableLiveData<HomeResponse?>()
     var loading = MutableLiveData(false)
+    var homeResponse : HomeResponse? = null
 
     fun getItens() {
         loading.value = true
@@ -42,6 +43,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
             when (response) {
                 is ResponseWrapper.Success -> {
                     homeDataItem.value = response.value
+                    homeResponse = response.value
                 }
                 else -> {}
             }
