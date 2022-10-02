@@ -27,7 +27,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             showLoading(it)
         }
 
-        viewModel.checkin.observe(viewLifecycleOwner){
+        viewModel.checkin.observe(viewLifecycleOwner) {
 
             binding?.txtMenssage?.text = it.toString()
 
