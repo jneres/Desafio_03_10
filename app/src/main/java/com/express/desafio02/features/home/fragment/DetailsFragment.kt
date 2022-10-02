@@ -5,6 +5,8 @@ import com.express.desafio02.R
 import com.express.desafio02.core.abstractions.fragment.BaseFragment
 import com.express.desafio02.core.abstractions.utils.toCurrency
 import com.express.desafio02.databinding.FragmentDetailsBinding
+import com.express.desafio02.features.home.data.model.Checkin
+import com.express.desafio02.features.home.data.model.People
 import com.express.desafio02.features.home.viewModel.HomeViewModel
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -14,6 +16,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     private val viewModel: HomeViewModel by sharedViewModel()
 
     override fun layout() = R.layout.fragment_details
+    val itemSend = Checkin()
 
     override fun init() {
         setItems()
@@ -28,16 +31,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         }
 
         viewModel.checkin.observe(viewLifecycleOwner) {
-
             binding?.txtMenssage?.text = it.toString()
-
         }
     }
 
     private fun buttonsNav() {
         binding?.apply {
             btnBack.setOnClickListener {
-                findNavController().popBackStack()
             }
         }
     }
@@ -54,8 +54,8 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
 
                 Picasso.get().load(homeResponse?.image)
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.no_photo)
+                    .error(R.drawable.no_photo)
                     .into(imgItemList)
             }
         }
@@ -64,11 +64,16 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     fun sendDetails() {
         binding?.apply {
             val idItem = viewModel.homeResponse?.idItem
+
+            itemSend.apply {
+                eventId = idItem.toString()
+                name = txtName.text.toString()
+                email = txtEmail.text.toString()
+            }
+
             btnCheckin.setOnClickListener {
                 viewModel.setDetails(
-                    idItem.toString(),
-                    txtName.text.toString(),
-                    txtEmail.text.toString()
+                    itemSend
                 )
             }
         }

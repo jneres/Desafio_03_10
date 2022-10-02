@@ -39,9 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setNavigationGraph() {
         navHostFragment = supportFragmentManager.findFragmentById(R.id.container_main) as NavHostFragment
-        navHostFragment.findNavController().run {
 
-        }
         navController = navHostFragment.navController
 
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)

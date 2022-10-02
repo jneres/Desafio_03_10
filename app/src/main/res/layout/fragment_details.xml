@@ -16,7 +16,6 @@
                 android:id="@+id/btn_back"
                 android:layout_width="97dp"
                 android:layout_height="36dp"
-
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_input_back"
                 android:drawableStart="@drawable/ic_right_arrow"
@@ -31,13 +30,13 @@
             <ImageView
                 android:id="@+id/img_item_list"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="220dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input_image"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_back"
-                app:tint="@color/purple_700" />
+                app:layout_constraintTop_toBottomOf="@id/btn_back" />
 
 
             <TextView
@@ -233,8 +232,8 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/inter_medium"
                 android:text=""
-                android:textSize="14sp"
                 android:textColor="@color/red_DB2E36"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@id/input_email"
                 app:layout_constraintStart_toStartOf="@id/input_email"
                 app:layout_constraintTop_toBottomOf="@id/input_email" />

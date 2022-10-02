@@ -1,10 +1,11 @@
 package com.express.desafio02.features.home.data
 
+import com.express.desafio02.features.home.data.model.Checkin
 import com.express.desafio02.features.home.data.model.HomeResponse
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface HomeService {
     @GET("events/")
@@ -13,10 +14,10 @@ interface HomeService {
     @GET("events/{id}")
     suspend fun getListDetails(@Path("id") idItem: Int): HomeResponse
 
-    @POST("events/")
+    @POST("checkin/")
     suspend fun setDetails(
-        @Path("id") idItem: String,
-        @Path("name") name: String,
-        @Path("email") email: String
+        @Body request: Checkin
     ): String
 }
+
+

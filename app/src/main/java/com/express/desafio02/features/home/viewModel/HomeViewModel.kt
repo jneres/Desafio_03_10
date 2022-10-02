@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.express.desafio02.core.abstractions.network.ResponseWrapper
 import com.express.desafio02.features.home.data.HomeRepository
+import com.express.desafio02.features.home.data.model.Checkin
 import com.express.desafio02.features.home.data.model.HomeResponse
 import kotlinx.coroutines.launch
 
@@ -55,12 +56,12 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
         loading.value = false
     }
 
-    fun setDetails(eventId: String, name: String, email: String) {
+    fun setDetails(request: Checkin) {
 
         loading.value = true
 
         viewModelScope.launch {
-            val response = repository.setDetails(eventId, name, email)
+            val response = repository.setDetails(request)
 
             when (response) {
                 is ResponseWrapper.Success -> {
