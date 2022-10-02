@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/HomeFragment"
     tools:ignore="InvalidNavigation">
-
 
     <fragment
         android:id="@+id/HomeFragment"
@@ -26,6 +24,9 @@
             android:name="homeResponseDetails"
             app:argType="com.express.desafio02.features.home.data.model.HomeResponse"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_DetailsFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
 
     </fragment>
 

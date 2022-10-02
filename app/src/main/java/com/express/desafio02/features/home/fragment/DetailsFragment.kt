@@ -1,5 +1,6 @@
 package com.express.desafio02.features.home.fragment
 
+import androidx.navigation.fragment.findNavController
 import com.express.desafio02.R
 import com.express.desafio02.core.abstractions.fragment.BaseFragment
 import com.express.desafio02.core.abstractions.utils.toCurrency
@@ -17,11 +18,20 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     override fun init() {
         setItems()
         observItens()
+        buttonsNav()
     }
 
     private fun observItens() {
         viewModel.loading.observe(viewLifecycleOwner) {
             showLoading(it)
+        }
+    }
+
+    private fun buttonsNav() {
+        binding?.apply {
+            btnBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
     }
 

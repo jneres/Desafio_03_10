@@ -11,4 +11,7 @@
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
     <string name="feira_de_ado_o_de_animais_na_reden_o">Feira de adoção de animais na Redenção</string>
+    <string name="voltar">Voltar</string>
+    <string name="e_mail">E-mail</string>
+    <string name="checkin">checkin</string>
 </resources>

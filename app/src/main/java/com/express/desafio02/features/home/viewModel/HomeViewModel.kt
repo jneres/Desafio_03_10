@@ -13,14 +13,17 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
     val homeData = MutableLiveData<List<HomeResponse>?>()
     val homeDataItem = MutableLiveData<HomeResponse?>()
     var loading = MutableLiveData(false)
-    var homeResponse : HomeResponse? = null
+    var checkin = MutableLiveData<String?>()
+
+
+    var homeResponse: HomeResponse? = null
 
     fun getItens() {
         loading.value = true
 
         viewModelScope.launch {
 
-            val response = repository.getItensApi()
+            val response = repository.getItens()
 
             when (response) {
                 is ResponseWrapper.Success -> {
@@ -38,7 +41,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
         loading.value = true
 
         viewModelScope.launch {
-            val response = repository.getItensDetailsApi(idItem)
+            val response = repository.getItensDetails(idItem)
 
             when (response) {
                 is ResponseWrapper.Success -> {
@@ -51,4 +54,26 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
 
         loading.value = false
     }
+
+    fun setDetails(eventId: Int, name: String, email: String) {
+
+        loading.value = true
+
+        viewModelScope.launch {
+            val response = repository.setDetails(eventId, name, email)
+
+            when (response) {
+                is ResponseWrapper.Success -> {
+                    checkin.value = response.value
+                }
+                else -> {}
+            }
+        }
+
+        loading.value = false
+
+    }
 }
+
+
+

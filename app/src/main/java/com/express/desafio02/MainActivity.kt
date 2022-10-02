@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import com.express.desafio02.databinding.ActivityMainBinding
 
@@ -37,8 +38,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setNavigationGraph() {
-        navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.container_main) as NavHostFragment
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.container_main) as NavHostFragment
+        navHostFragment.findNavController().run {
+
+        }
         navController = navHostFragment.navController
 
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
