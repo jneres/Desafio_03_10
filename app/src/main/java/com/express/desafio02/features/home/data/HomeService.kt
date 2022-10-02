@@ -15,7 +15,7 @@ interface HomeService {
 
     @POST("events/")
     suspend fun setDetails(
-        @Path("id") idItem: Int,
+        @Path("id") idItem: String,
         @Path("name") name: String,
         @Path("email") email: String
     ): String

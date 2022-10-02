@@ -18,7 +18,7 @@ class HomeRepository(private val service: HomeService) {
         }
     }
 
-    suspend fun setDetails(eventId: Int, name: String, email: String): ResponseWrapper<String> {
+    suspend fun setDetails(eventId: String, name: String, email: String): ResponseWrapper<String> {
         return apiCall {
             service.setDetails(eventId, name, email)
         }

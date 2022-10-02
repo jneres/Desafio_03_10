@@ -55,7 +55,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
         loading.value = false
     }
 
-    fun setDetails(eventId: Int, name: String, email: String) {
+    fun setDetails(eventId: String, name: String, email: String) {
 
         loading.value = true
 
@@ -71,7 +71,6 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
         }
 
         loading.value = false
-
     }
 }
 

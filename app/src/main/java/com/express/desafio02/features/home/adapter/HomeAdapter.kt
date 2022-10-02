@@ -59,8 +59,8 @@ class HomeAdapter(
                 }
 
                 Picasso.get().load(service.image)
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.no_photo)
+                    .error(R.drawable.no_photo)
                     .into(imgItemList)
             }
         }

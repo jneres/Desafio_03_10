@@ -19,11 +19,18 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         setItems()
         observItens()
         buttonsNav()
+        sendDetails()
     }
 
     private fun observItens() {
         viewModel.loading.observe(viewLifecycleOwner) {
             showLoading(it)
+        }
+
+        viewModel.checkin.observe(viewLifecycleOwner){
+
+            binding?.txtMenssage?.text = it.toString()
+
         }
     }
 
@@ -50,6 +57,19 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
                     .placeholder(R.drawable.ic_launcher_background)
                     .error(R.drawable.ic_launcher_background)
                     .into(imgItemList)
+            }
+        }
+    }
+
+    fun sendDetails() {
+        binding?.apply {
+            val idItem = viewModel.homeResponse?.idItem
+            btnCheckin.setOnClickListener {
+                viewModel.setDetails(
+                    idItem.toString(),
+                    txtName.text.toString(),
+                    txtEmail.text.toString()
+                )
             }
         }
     }
