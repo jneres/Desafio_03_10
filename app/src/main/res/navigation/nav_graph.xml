@@ -9,6 +9,7 @@
     <fragment
         android:id="@+id/HomeFragment"
         android:name="com.express.desafio02.features.home.fragment.HomeFragment"
+        android:label="homeFragment"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -19,16 +20,7 @@
     <fragment
         android:id="@+id/DetailsFragment"
         android:name="com.express.desafio02.features.home.fragment.DetailsFragment"
-        tools:layout="@layout/fragment_details" >
-
-        <argument
-            android:name="homeResponseDetails"
-            app:argType="com.express.desafio02.features.home.data.model.HomeResponse"
-            app:nullable="true" />
-        <action
-            android:id="@+id/action_DetailsFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment" />
-
-    </fragment>
+        android:label="detailsFragment"
+        tools:layout="@layout/fragment_details"/>
 
 </navigation>

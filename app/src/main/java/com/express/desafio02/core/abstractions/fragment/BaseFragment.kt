@@ -53,7 +53,6 @@ abstract class BaseFragment<Binding : ViewDataBinding> : Fragment() {
         findNavController().navigateAnimation(id, bundle)
     }
 
-    //navi Directions
     fun navigate(args: NavDirections) {
         findNavController().navigateAnimation(args)
     }

@@ -1,8 +1,10 @@
 package com.express.desafio02.features.home.fragment
 
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.express.desafio02.R
 import com.express.desafio02.core.abstractions.fragment.BaseFragment
+import com.express.desafio02.core.abstractions.navigation.navigateAnimation
 import com.express.desafio02.databinding.FragmentHomeBinding
 import com.express.desafio02.features.home.adapter.HomeAdapter
 import com.express.desafio02.features.home.viewModel.HomeViewModel

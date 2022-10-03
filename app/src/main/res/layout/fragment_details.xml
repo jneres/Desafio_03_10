@@ -12,20 +12,6 @@
             android:layout_height="wrap_content"
             android:padding="15dp">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_back"
-                android:layout_width="97dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/bg_input_back"
-                android:drawableStart="@drawable/ic_right_arrow"
-                android:paddingHorizontal="12dp"
-                android:text="@string/voltar"
-                android:textColor="@color/grey_333640"
-                app:cornerRadius="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="@color/grey_7F879F" />
 
             <ImageView
                 android:id="@+id/img_item_list"
@@ -36,7 +22,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_back" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <TextView

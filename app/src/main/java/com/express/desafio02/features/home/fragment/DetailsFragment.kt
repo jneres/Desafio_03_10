@@ -1,12 +1,12 @@
 package com.express.desafio02.features.home.fragment
 
+
 import androidx.navigation.fragment.findNavController
 import com.express.desafio02.R
 import com.express.desafio02.core.abstractions.fragment.BaseFragment
 import com.express.desafio02.core.abstractions.utils.toCurrency
 import com.express.desafio02.databinding.FragmentDetailsBinding
 import com.express.desafio02.features.home.data.model.Checkin
-import com.express.desafio02.features.home.data.model.People
 import com.express.desafio02.features.home.viewModel.HomeViewModel
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -21,7 +21,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     override fun init() {
         setItems()
         observItens()
-        buttonsNav()
         sendDetails()
     }
 
@@ -32,13 +31,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
         viewModel.checkin.observe(viewLifecycleOwner) {
             binding?.txtMenssage?.text = it.toString()
-        }
-    }
-
-    private fun buttonsNav() {
-        binding?.apply {
-            btnBack.setOnClickListener {
-            }
         }
     }
 
